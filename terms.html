@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Lucky Spin Casino</title>
+    <meta name="description" content="Read our terms of service and understand how to use Lucky Spin Casino responsibly.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #FF6B35;
+            --secondary: #F7931E;
+            --accent: #FFD700;
+            --dark: #1a1a2e;
+            --darker: #0f0f1e;
+            --light: #ffffff;
+            --gray: #a0a0a0;
+            --gradient: linear-gradient(135deg, #FF6B35 0%, #F7931E 50%, #FFD700 100%);
+            --card-bg: rgba(255, 255, 255, 0.05);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--darker);
+            color: var(--light);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(247, 147, 30, 0.1) 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--primary);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo::before {
+            content: '🎰';
+            -webkit-text-fill-color: initial;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 3px;
+        }
+
+        .page-hero {
+            padding: 4rem 0 2rem;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-hero p {
+            font-size: 1.1rem;
+            color: var(--gray);
+        }
+
+        .back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .back-home:hover {
+            transform: translateX(-5px);
+            color: var(--accent);
+        }
+
+        .content-section {
+            padding: 3rem 0;
+        }
+
+        .terms-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .terms-card h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .terms-card h3 {
+            color: var(--secondary);
+            margin: 2rem 0 1rem;
+            font-size: 1.5rem;
+        }
+
+        .terms-card p {
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+
+        .terms-card ul, .terms-card ol {
+            color: var(--gray);
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .terms-card li {
+            margin-bottom: 0.5rem;
+        }
+
+        .terms-card strong {
+            color: var(--light);
+        }
+
+        .highlight-box {
+            background: rgba(255, 107, 53, 0.1);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 10px;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            color: var(--light);
+        }
+
+        .last-updated {
+            text-align: center;
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        footer {
+            background: var(--darker);
+            padding: 3rem 0 1rem;
+            border-top: 2px solid var(--primary);
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--gray);
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: var(--dark);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(26, 26, 46, 0.98);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1rem;
+                border-top: 2px solid var(--primary);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+
+            .terms-card {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .terms-card h2 {
+                font-size: 1.5rem;
+            }
+
+            .terms-card h3 {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Lucky Spin</div>
+            <div class="mobile-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="games.html">Games</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <a href="index.html" class="back-home">← Back to Home</a>
+            <h1>Terms of Service</h1>
+            <p>Please read these terms carefully before using our platform</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="terms-card">
+                <h2>📜 Terms of Service Agreement</h2>
+                
+                <div class="highlight-box">
+                    <p><strong>Important Notice:</strong> By accessing and using Lucky Spin Casino, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service. If you do not agree with any part of these terms, please discontinue use of our platform immediately.</p>
+                </div>
+
+                <h3>1. Acceptance of Terms</h3>
+                <p>These Terms of Service ("Terms") govern your access to and use of Lucky Spin Casino ("the Platform", "we", "us", or "our"). By accessing or using the Platform, you agree to comply with and be bound by these Terms and all applicable laws and regulations.</p>
+
+                <h3>2. Description of Service</h3>
+                <p>Lucky Spin Casino provides <strong>free demo casino games</strong> for entertainment purposes only. Our platform offers:</p>
+                <ul>
+                    <li>Access to demo versions of slot machines and casino games</li>
+                    <li>Virtual currency for gameplay (no real monetary value)</li>
+                    <li>Educational content about casino games and responsible gaming</li>
+                    <li>A risk-free environment to experience casino-style entertainment</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <p><strong>Critical Disclaimer:</strong> Lucky Spin Casino does NOT involve real money gambling. All games use virtual credits with no monetary value. You cannot win or lose real money on our platform.</p>
+                </div>
+
+                <h3>3. Eligibility</h3>
+                <p>To use Lucky Spin Casino, you must:</p>
+                <ul>
+                    <li>Be at least 18 years of age or the legal age of majority in your jurisdiction</li>
+                    <li>Have the legal capacity to enter into this agreement</li>
+                    <li>Not be located in a jurisdiction where access to such content is prohibited</li>
+                    <li>Use the Platform in compliance with all applicable local, state, and federal laws</li>
+                </ul>
+
+                <h3>4. User Conduct</h3>
+                <p>When using our Platform, you agree to:</p>
+                <ul>
+                    <li>Use the Platform only for lawful, non-commercial purposes</li>
+                    <li>Not attempt to hack, reverse engineer, or compromise the Platform's security</li>
+                    <li>Not use automated systems or bots to access the Platform</li>
+                    <li>Not impersonate others or misrepresent your affiliation with any person or entity</li>
+                    <li>Not upload or transmit viruses, malware, or any harmful code</li>
+                    <li>Respect the intellectual property rights of Lucky Spin Casino and third parties</li>
+                </ul>
+
+                <h3>5. No Real Money Gambling</h3>
+                <p>Lucky Spin Casino is explicitly <strong>NOT a real money gambling platform</strong>. Our service provides:</p>
+                <ul>
+                    <li>Virtual credits for gameplay only (no cash value)</li>
+                    <li>No ability to purchase, deposit, or withdraw real money</li>
+                    <li>No prizes, payouts, or rewards with monetary value</li>
+                    <li>Pure entertainment without financial risk or gain</li>
+                </ul>
+                <p>Any wins, losses, or credits displayed are purely for entertainment and have no connection to real-world finances.</p>
+
+                <h3>6. Intellectual Property Rights</h3>
+                <p>All content on Lucky Spin Casino, including but not limited to text, graphics, logos, images, software, and game designs, is the property of Lucky Spin Casino or its licensors and is protected by copyright, trademark, and other intellectual property laws.</p>
+                <p>You are granted a limited, non-exclusive, non-transferable license to access and use the Platform for personal, non-commercial purposes only.</p>
+
+                <h3>7. Privacy and Data</h3>
+                <p>We respect your privacy. Lucky Spin Casino:</p>
+                <ul>
+                    <li>Does not require registration or account creation</li>
+                    <li>Does not collect personal information unless voluntarily provided (e.g., via contact forms)</li>
+                    <li>Does not collect payment or financial information</li>
+                    <li>May use cookies for analytics and improving user experience</li>
+                </ul>
+                <p>For more details, please review our <a href="privacy.html" style="color: var(--primary);">Privacy Policy</a>.</p>
+
+                <h3>8. Disclaimers and Limitations of Liability</h3>
+                <p>Lucky Spin Casino is provided "AS IS" and "AS AVAILABLE" without warranties of any kind, either express or implied. We do not guarantee that:</p>
+                <ul>
+                    <li>The Platform will be uninterrupted, secure, or error-free</li>
+                    <li>Results obtained from using the Platform will be accurate or reliable</li>
+                    <li>Any defects will be corrected</li>
+                </ul>
+                <p><strong>To the fullest extent permitted by law, Lucky Spin Casino shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of your use or inability to use the Platform.</strong></p>
+
+                <h3>9. Responsible Gaming</h3>
+                <p>While our Platform involves no real money, we are committed to promoting responsible gaming practices. We encourage users to:</p>
+                <ul>
+                    <li>Play for entertainment only</li>
+                    <li>Take regular breaks</li>
+                    <li>Be aware that demo games do not reflect real gambling odds</li>
+                    <li>Seek help if you or someone you know has a gambling problem</li>
+                </ul>
+                <p>Visit our <a href="responsible.html" style="color: var(--primary);">Responsible Gaming</a> page for resources and support.</p>
+
+                <h3>10. Links to Third-Party Websites</h3>
+                <p>Our Platform may contain links to third-party websites for your convenience. We do not endorse or assume responsibility for the content, privacy policies, or practices of any third-party sites. You access such sites at your own risk.</p>
+
+                <h3>11. Modifications to Terms</h3>
+                <p>We reserve the right to modify these Terms at any time. Changes will be effective immediately upon posting to the Platform. Your continued use of the Platform after such modifications constitutes your acceptance of the updated Terms. We recommend reviewing this page periodically.</p>
+
+                <h3>12. Termination</h3>
+                <p>We reserve the right to terminate or suspend your access to the Platform at any time, without notice, for any reason, including but not limited to violation of these Terms.</p>
+
+                <h3>13. Governing Law</h3>
+                <p>These Terms shall be governed by and construed in accordance with the laws of the applicable jurisdiction, without regard to its conflict of law provisions.</p>
+
+                <h3>14. Severability</h3>
+                <p>If any provision of these Terms is found to be unenforceable or invalid, that provision shall be limited or eliminated to the minimum extent necessary, and the remaining provisions shall remain in full force and effect.</p>
+
+                <h3>15. Contact Information</h3>
+                <p>If you have any questions about these Terms of Service, please contact us:</p>
+                <ul>
+                    <li><strong>Email:</strong> nurlanmammadli2@gmail.com</li>
+                    <li><strong>Contact Page:</strong> <a href="contact.html" style="color: var(--primary);">Get in Touch</a></li>
+                </ul>
+
+                <div class="highlight-box" style="margin-top: 3rem;">
+                    <p><strong>Acknowledgment:</strong> By using Lucky Spin Casino, you acknowledge that you have read these Terms of Service, understand them, and agree to be bound by them. Thank you for being a responsible user of our platform!</p>
+                </div>
+
+                <div class="last-updated">
+                    <p>Last Updated: October 4, 2025</p>
+                    <p style="margin-top: 0.5rem;">Version 1.0</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Lucky Spin</h3>
+                    <p>We provide a safe, fun environment to enjoy casino-style games without financial risk. Our mission is to promote responsible entertainment.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="games.html">Games</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="responsible.html">Responsible Gaming</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <p>Have questions or feedback? We'd love to hear from you!</p>
+                    <a href="contact.html" class="btn btn-primary" style="margin-top: 1rem; display: inline-block; padding: 0.7rem 1.5rem; font-size: 0.9rem;">Get in Touch</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Lucky Spin Casino. All rights reserved. | For entertainment purposes only.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem;">18+ Only | Play Responsibly</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
