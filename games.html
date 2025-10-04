@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games - Lucky Spin Casino</title>
+    <meta name="description" content="Explore our collection of free demo casino games and slots.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #FF6B35;
+            --secondary: #F7931E;
+            --accent: #FFD700;
+            --dark: #1a1a2e;
+            --darker: #0f0f1e;
+            --light: #ffffff;
+            --gray: #a0a0a0;
+            --gradient: linear-gradient(135deg, #FF6B35 0%, #F7931E 50%, #FFD700 100%);
+            --card-bg: rgba(255, 255, 255, 0.05);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--darker);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(247, 147, 30, 0.1) 0%, transparent 50%);
+            z-index: -1;
+            animation: bgFloat 20s ease-in-out infinite;
+        }
+
+        @keyframes bgFloat {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.1) rotate(5deg); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--primary);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo::before {
+            content: '🎰';
+            -webkit-text-fill-color: initial;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after, .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 3px;
+        }
+
+        .page-hero {
+            padding: 4rem 0 2rem;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .back-home:hover {
+            transform: translateX(-5px);
+            color: var(--accent);
+        }
+
+        .coming-soon-section {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 0;
+        }
+
+        .coming-soon-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            padding: 4rem 3rem;
+            border-radius: 30px;
+            border: 2px solid var(--primary);
+            text-align: center;
+            max-width: 700px;
+            box-shadow: 0 20px 60px rgba(255, 107, 53, 0.3);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .coming-soon-icon {
+            font-size: 6rem;
+            margin-bottom: 2rem;
+            animation: rotate 4s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .coming-soon-card h2 {
+            font-size: 3rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .coming-soon-card p {
+            font-size: 1.3rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .features-list {
+            text-align: left;
+            margin: 2rem auto;
+            max-width: 500px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            border-left: 3px solid var(--primary);
+        }
+
+        .feature-item span:first-child {
+            font-size: 2rem;
+        }
+
+        .feature-item span:last-child {
+            color: var(--light);
+            font-size: 1.1rem;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: var(--dark);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.6);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--light);
+            border: 2px solid var(--primary);
+            margin-left: 1rem;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 15px;
+            min-width: 100px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .countdown-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            display: block;
+        }
+
+        .countdown-label {
+            color: var(--gray);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        footer {
+            background: var(--darker);
+            padding: 3rem 0 1rem;
+            border-top: 2px solid var(--primary);
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--gray);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(26, 26, 46, 0.98);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1rem;
+                border-top: 2px solid var(--primary);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+
+            .coming-soon-card {
+                padding: 3rem 2rem;
+            }
+
+            .coming-soon-card h2 {
+                font-size: 2rem;
+            }
+
+            .countdown {
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .coming-soon-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .coming-soon-icon {
+                font-size: 4rem;
+            }
+
+            .coming-soon-card h2 {
+                font-size: 1.8rem;
+            }
+
+            .coming-soon-card p {
+                font-size: 1.1rem;
+            }
+
+            .btn {
+                width: 100%;
+                margin: 0.5rem 0 !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .countdown-number {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Lucky Spin</div>
+            <div class="mobile-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="games.html" class="active">Games</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <a href="index.html" class="back-home">← Back to Home</a>
+            <h1>Game Collection</h1>
+        </div>
+    </section>
+
+    <section class="coming-soon-section">
+        <div class="container">
+            <div class="coming-soon-card">
+                <div class="coming-soon-icon">🎮</div>
+                <h2>Coming Soon!</h2>
+                <p>We're working hard to bring you an amazing collection of free demo casino games and slots. Get ready for an incredible gaming experience!</p>
+
+                <div class="countdown">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="days">00</span>
+                        <span class="countdown-label">Days</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="hours">00</span>
+                        <span class="countdown-label">Hours</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="minutes">00</span>
+                        <span class="countdown-label">Minutes</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="seconds">00</span>
+                        <span class="countdown-label">Seconds</span>
+                    </div>
+                </div>
+
+                <div class="features-list">
+                    <div class="feature-item">
+                        <span>🎰</span>
+                        <span>Classic & Modern Slot Machines</span>
+                    </div>
+                    <div class="feature-item">
+                        <span>🃏</span>
+                        <span>Card Games & Table Games</span>
+                    </div>
+                    <div class="feature-item">
+                        <span>🎲</span>
+                        <span>Dice Games & Roulette</span>
+                    </div>
+                    <div class="feature-item">
+                        <span>💎</span>
+                        <span>Premium Graphics & Animations</span>
+                    </div>
+                    <div class="feature-item">
+                        <span>📱</span>
+                        <span>Fully Mobile Optimized</span>
+                    </div>
+                    <div class="feature-item">
+                        <span>🔄</span>
+                        <span>Regular New Game Releases</span>
+                    </div>
+                </div>
+
+                <div style="margin-top: 2rem;">
+                    <a href="index.html" class="btn btn-primary">Explore Platform</a>
+                    <a href="contact.html" class="btn btn-secondary">Notify Me</a>
+                </div>
+
+                <p style="margin-top: 2rem; font-size: 1rem; color: var(--gray);">
+                    Stay tuned! We'll be launching our first collection of games very soon. In the meantime, explore our platform to learn more about what we offer.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Lucky Spin</h3>
+                    <p>We provide a safe, fun environment to enjoy casino-style games without financial risk. Our mission is to promote responsible entertainment.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="games.html">Games</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="responsible.html">Responsible Gaming</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <p>Have questions or feedback? We'd love to hear from you!</p>
+                    <a href="contact.html" class="btn btn-primary" style="margin-top: 1rem; display: inline-block; padding: 0.7rem 1.5rem; font-size: 0.9rem;">Get in Touch</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Lucky Spin Casino. All rights reserved. | For entertainment purposes only.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem;">18+ Only | Play Responsibly</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Countdown Timer - Set to 7 days from now
+        const launchDate = new Date();
+        launchDate.setDate(launchDate.getDate() + 7);
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = launchDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+
+            if (distance < 0) {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+            }
+        }
+
+        // Update countdown every second
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
