@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Lucky Spin Casino</title>
+    <meta name="description" content="Learn how Lucky Spin Casino protects your privacy and handles your information.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #FF6B35;
+            --secondary: #F7931E;
+            --accent: #FFD700;
+            --dark: #1a1a2e;
+            --darker: #0f0f1e;
+            --light: #ffffff;
+            --gray: #a0a0a0;
+            --gradient: linear-gradient(135deg, #FF6B35 0%, #F7931E 50%, #FFD700 100%);
+            --card-bg: rgba(255, 255, 255, 0.05);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--darker);
+            color: var(--light);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(247, 147, 30, 0.1) 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--primary);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo::before {
+            content: '🎰';
+            -webkit-text-fill-color: initial;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 3px;
+        }
+
+        .page-hero {
+            padding: 4rem 0 2rem;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-hero p {
+            font-size: 1.1rem;
+            color: var(--gray);
+        }
+
+        .back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .back-home:hover {
+            transform: translateX(-5px);
+            color: var(--accent);
+        }
+
+        .content-section {
+            padding: 3rem 0;
+        }
+
+        .privacy-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .privacy-card h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .privacy-card h3 {
+            color: var(--secondary);
+            margin: 2rem 0 1rem;
+            font-size: 1.5rem;
+        }
+
+        .privacy-card p {
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+
+        .privacy-card ul {
+            color: var(--gray);
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .privacy-card li {
+            margin-bottom: 0.5rem;
+        }
+
+        .privacy-card strong {
+            color: var(--light);
+        }
+
+        .highlight-box {
+            background: rgba(76, 175, 80, 0.1);
+            border-left: 4px solid #4CAF50;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 10px;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            color: var(--light);
+        }
+
+        .warning-box {
+            background: rgba(255, 107, 53, 0.1);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 10px;
+        }
+
+        .last-updated {
+            text-align: center;
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        footer {
+            background: var(--darker);
+            padding: 3rem 0 1rem;
+            border-top: 2px solid var(--primary);
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--gray);
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: var(--dark);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(26, 26, 46, 0.98);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1rem;
+                border-top: 2px solid var(--primary);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+
+            .privacy-card {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .privacy-card h2 {
+                font-size: 1.5rem;
+            }
+
+            .privacy-card h3 {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Lucky Spin</div>
+            <div class="mobile-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="games.html">Games</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <a href="index.html" class="back-home">← Back to Home</a>
+            <h1>Privacy Policy</h1>
+            <p>Your privacy is important to us. Learn how we protect your information.</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="privacy-card">
+                <h2>🔒 Privacy Policy</h2>
+                
+                <div class="highlight-box">
+                    <p><strong>Our Commitment:</strong> Lucky Spin Casino is committed to protecting your privacy. Since we don't require registration and don't handle real money transactions, we collect minimal personal information. This policy explains what information we may collect and how we use it.</p>
+                </div>
+
+                <h3>1. Information We Collect</h3>
+                
+                <h4 style="color: var(--light); margin-top: 1.5rem; margin-bottom: 0.5rem;">1.1 Information You Provide Voluntarily</h4>
+                <p>We only collect personal information that you choose to provide, such as:</p>
+                <ul>
+                    <li><strong>Contact Form Submissions:</strong> Name, email address, and message content when you contact us</li>
+                    <li><strong>Feedback:</strong> Any information you choose to share when providing feedback</li>
+                </ul>
+                <p>We do NOT require registration, account creation, or any mandatory personal information to use our games.</p>
+
+                <h4 style="color: var(--light); margin-top: 1.5rem; margin-bottom: 0.5rem;">1.2 Information Collected Automatically</h4>
+                <p>When you visit our website, we may automatically collect:</p>
+                <ul>
+                    <li><strong>Technical Information:</strong> Browser type, device type, operating system, IP address</li>
+                    <li><strong>Usage Data:</strong> Pages visited, time spent on pages, click patterns, game preferences</li>
+                    <li><strong>Cookies:</strong> Small text files stored on your device for analytics and user experience</li>
+                </ul>
+
+                <h4 style="color: var(--light); margin-top: 1.5rem; margin-bottom: 0.5rem;">1.3 Information We Do NOT Collect</h4>
+                <div class="warning-box">
+                    <p><strong>Important:</strong> Lucky Spin Casino does NOT collect:</p>
+                    <ul style="margin-top: 0.5rem;">
+                        <li>Payment or credit card information (we don't handle real money)</li>
+                        <li>Social security numbers or government IDs</li>
+                        <li>Precise geolocation data</li>
+                        <li>Biometric data</li>
+                        <li>Health or medical information</li>
+                    </ul>
+                </div>
+
+                <h3>2. How We Use Your Information</h3>
+                <p>We use the information we collect for the following purposes:</p>
+                <ul>
+                    <li><strong>Platform Operation:</strong> To provide and maintain our free gaming platform</li>
+                    <li><strong>User Support:</strong> To respond to your inquiries and provide customer support</li>
+                    <li><strong>Improvement:</strong> To analyze usage patterns and improve our games and website</li>
+                    <li><strong>Communication:</strong> To send responses to your contact form submissions</li>
+                    <li><strong>Security:</strong> To detect and prevent technical issues, abuse, or fraudulent activity</li>
+                    <li><strong>Legal Compliance:</strong> To comply with applicable laws and regulations</li>
+                </ul>
+                <p><strong>We do NOT sell, rent, or share your personal information with third parties for marketing purposes.</strong></p>
+
+                <h3>3. Cookies and Tracking Technologies</h3>
+                <p>Lucky Spin Casino may use cookies and similar tracking technologies to enhance your experience:</p>
+                <ul>
+                    <li><strong>Essential Cookies:</strong> Required for basic website functionality</li>
+                    <li><strong>Analytics Cookies:</strong> Help us understand how visitors use our site</li>
+                    <li><strong>Preference Cookies:</strong> Remember your settings and preferences</li>
+                </ul>
+                <p>You can control cookies through your browser settings. However, disabling cookies may affect your experience on our platform.</p>
+
+                <h3>4. Data Storage and Security</h3>
+                <p>We implement reasonable security measures to protect your information:</p>
+                <ul>
+                    <li>Secure data transmission using encryption (HTTPS)</li>
+                    <li>Limited access to personal information by authorized personnel only</li>
+                    <li>Regular security audits and updates</li>
+                    <li>No storage of sensitive financial information (we don't process payments)</li>
+                </ul>
+                <p>However, no method of transmission over the internet is 100% secure. While we strive to protect your information, we cannot guarantee absolute security.</p>
+
+                <h3>5. Data Retention</h3>
+                <p>We retain your information only as long as necessary for the purposes outlined in this policy:</p>
+                <ul>
+                    <li><strong>Contact Form Data:</strong> Retained for up to 2 years or until the inquiry is resolved</li>
+                    <li><strong>Analytics Data:</strong> Typically aggregated and anonymized, retained for analysis purposes</li>
+                    <li><strong>Game Progress:</strong> Stored locally on your device only; we don't store game data on our servers</li>
+                </ul>
+
+                <h3>6. Your Privacy Rights</h3>
+                <p>Depending on your location, you may have certain rights regarding your personal information:</p>
+                <ul>
+                    <li><strong>Access:</strong> Request access to the personal information we hold about you</li>
+                    <li><strong>Correction:</strong> Request correction of inaccurate or incomplete information</li>
+                    <li><strong>Deletion:</strong> Request deletion of your personal information</li>
+                    <li><strong>Objection:</strong> Object to our processing of your personal information</li>
+                    <li><strong>Portability:</strong> Request a copy of your data in a portable format</li>
+                </ul>
+                <p>To exercise these rights, please contact us at nurlanmammadli2@gmail.com.</p>
+
+                <h3>7. Children's Privacy</h3>
+                <div class="warning-box">
+                    <p><strong>Age Restriction:</strong> Lucky Spin Casino is intended for users aged 18 and over. We do not knowingly collect personal information from children under 18. If you believe we have inadvertently collected information from a minor, please contact us immediately, and we will delete it.</p>
+                </div>
+
+                <h3>8. Third-Party Links</h3>
+                <p>Our website may contain links to third-party websites. We are not responsible for the privacy practices of these external sites. We encourage you to read their privacy policies before providing any personal information.</p>
+
+                <h3>9. International Data Transfers</h3>
+                <p>Your information may be transferred to and processed in countries other than your own. We take steps to ensure that your data receives adequate protection wherever it is processed.</p>
+
+                <h3>10. Changes to This Privacy Policy</h3>
+                <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated "Last Modified" date. We encourage you to review this policy periodically. Your continued use of the Platform after changes are posted constitutes acceptance of the updated policy.</p>
+
+                <h3>11. Do Not Track Signals</h3>
+                <p>Some browsers offer "Do Not Track" (DNT) signals. Currently, Lucky Spin Casino does not respond to DNT signals, but we respect your privacy choices and provide information about cookies and tracking in this policy.</p>
+
+                <h3>12. Contact Us About Privacy</h3>
+                <p>If you have questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:</p>
+                <ul>
+                    <li><strong>Email:</strong> nurlanmammadli2@gmail.com</li>
+                    <li><strong>Contact Page:</strong> <a href="contact.html" style="color: var(--primary);">Get in Touch</a></li>
+                </ul>
+                <p>We will respond to your inquiry within a reasonable timeframe.</p>
+
+                <div class="highlight-box" style="margin-top: 3rem;">
+                    <p><strong>Summary:</strong> Lucky Spin Casino minimizes data collection, doesn't handle financial information, and respects your privacy. We use the information we collect solely to provide and improve our free gaming platform. Your trust is important to us!</p>
+                </div>
+
+                <div class="last-updated">
+                    <p>Last Updated: October 4, 2025</p>
+                    <p style="margin-top: 0.5rem;">Version 1.0</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Lucky Spin</h3>
+                    <p>We provide a safe, fun environment to enjoy casino-style games without financial risk. Our mission is to promote responsible entertainment.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="games.html">Games</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="responsible.html">Responsible Gaming</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <p>Have questions or feedback? We'd love to hear from you!</p>
+                    <a href="contact.html" class="btn btn-primary" style="margin-top: 1rem; display: inline-block; padding: 0.7rem 1.5rem; font-size: 0.9rem;">Get in Touch</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Lucky Spin Casino. All rights reserved. | For entertainment purposes only.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem;">18+ Only | Play Responsibly</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
